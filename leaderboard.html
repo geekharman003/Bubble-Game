@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="displayLeaderboard()">
+    <main id="container">
+      <h2>Top Scorers</h2>
+      <table>
+        <thead>
+          <th>Player</th>
+          <th>Score</th>
+        </thead>
+        <tbody id="thingy"></tbody>
+      </table>
+    </main>
+    <script>
+      var container = document.querySelector("#container");
+      var thingy = document.querySelector("#thingy");
+
+      function displayLeaderboard() {
+        let theExport = "";
+        let leaderboardData =
+          JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+        leaderboardData.forEach((entry, index) => {
+            // const node = document.createElement("p");
+            // const textNode = document.createTextNode(`${index+1}. ${entry.name} ${entry.score}`);
+            // node.appendChild(textNode);
+            // container.appendChild(node);
+          theExport+=`<tr><td>${entry.name}</td><td>${entry.score}</td></tr>`;
+          thingy.innerHTML = theExport;
+          console.log(`${index + 1}. ${entry.name}: ${entry.score}`);
+        });
+      }
+    </script>
+  </body>
+</html>
