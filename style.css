@@ -30,6 +30,9 @@ html,body{
 }
 
 .gamepad{
+    /* display: flex; */
+    /* align-items: center; */
+    /* flex-wrap: wrap; */
     height: 80%;
     width: 80%;
     background-color: white;
@@ -97,7 +100,7 @@ html,body{
     align-items: center;
     height: calc(100% - 100px);
     width: 100%;
-    padding: 5px;
+    padding: 5px 10px;
     flex-wrap: wrap;
     text-align: center;
     /* background-color: red; */
@@ -111,7 +114,8 @@ height: 40px;
 width: 40px;
 background-color: rgb(89, 145, 89);
 border-radius: 50%;
-margin: 5px;
+margin: 4px;
+/* margin-right: 3px; */
 }
 
 .bubble:hover{
@@ -164,4 +168,16 @@ th,td{
     border: 1px solid black;
     padding: 5px;
     text-align: left;
+}
+
+
+@media (max-width:700px){
+    .gamepad{
+     height: 59vh;
+    }
+
+    .box{
+        justify-content: center;
+    }
+
 }
