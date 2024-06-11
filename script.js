@@ -41,7 +41,7 @@ function runTimer() {
     time.textContent = toint - 1;
     toint-=1;
     counter -= 1;
-  }, 10000);
+  }, 1000);
 }
 
 
